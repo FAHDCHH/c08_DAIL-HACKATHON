@@ -1,0 +1,32 @@
+{
+  "scenario_id": "yds_q2_2026_leipzig",
+  "context_id": "schmitz_youth_digital",
+  "event": {
+    "program": "Youth Digital Skills Program",
+    "period": "Q2 2026",
+    "title": "Q2 2026 program reporting - ZukunftsWerk gGmbH, Leipzig"
+  },
+  "reports": [
+    {
+      "role": "partner_coordinator",
+      "format": "field_update_freetext",
+      "text": "Q2 Leipzig going well. Around fifteen youths took part in the coding workshops and completed the track. Strong attendance throughout."
+    },
+    {
+      "role": "monitoring_officer",
+      "format": "attendance_sheet",
+      "text": "Attendance record, Youth Digital Skills, Leipzig, Q2 2026. Four sessions held (S1-S4). Unique participants across the quarter: 13. Per-session present counts: S1=12, S2=11, S3=8, S4=10. Source: signed session sheets."
+    },
+    {
+      "role": "program_coordinator",
+      "format": "coordinator_note",
+      "text": "Q2 Leipzig: report participation as 'attended'. Completion requires the ASSESS form. No ASSESS results received yet for Leipzig Q2, so completion cannot be reported."
+    }
+  ],
+  "simulated_followup": {
+    "label": "SIMULATED: partner uploads ASSESS results",
+    "role": "partner_coordinator",
+    "format": "assessment_record",
+    "text": "ASSESS end-of-program results, Q2 2026, Leipzig. 9 participants sat the assessment; 8 passed. Signed sheets attached."
+  }
+}

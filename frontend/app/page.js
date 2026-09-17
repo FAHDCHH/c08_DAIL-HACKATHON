@@ -100,7 +100,6 @@ function Events({ onOpen, flash }) {
       </div>
       <div className="row" style={{ marginBottom: 16 }}>
         <div className="searchbar">
-          <span>🔎</span>
           <input placeholder="Search events by name…" value={q}
             onChange={(e) => { setQ(e.target.value); load(e.target.value); }} />
         </div>
@@ -210,8 +209,6 @@ function Report({ eventId, onBack, flash }) {
             </span>
           </div>
           <div className="why">why: {c.reasoning}</div>
-          {c.annotations.map((a) => <div key={a.id} className="note">🖉 {a.note}</div>)}
-          <NoteBox claimId={c.id} onSaved={refresh} flash={flash} />
         </div>
       ))}
 
@@ -266,24 +263,6 @@ function Report({ eventId, onBack, flash }) {
   );
 }
 
-function NoteBox({ claimId, onSaved, flash }) {
-  const [open, setOpen] = useState(false);
-  const [val, setVal] = useState("");
-  const save = async () => {
-    if (!val.trim()) return;
-    try { await api.annotate(claimId, val.trim()); setVal(""); setOpen(false); onSaved(); flash("Note added"); }
-    catch (e) { flash("Note failed: " + e.message, true); }
-  };
-  if (!open) return <button className="ghost" style={{ marginTop: 8, padding: "4px 10px", fontSize: 12 }} onClick={() => setOpen(true)}>+ Add note</button>;
-  return (
-    <div className="noterow">
-      <input placeholder="Your note on this claim…" value={val} autoFocus
-        onChange={(e) => setVal(e.target.value)} onKeyDown={(e) => e.key === "Enter" && save()} />
-      <button className="btn small" onClick={save}>Save</button>
-    </div>
-  );
-}
-
 function History({ flash }) {
   const [q, setQ] = useState("");
   const [rows, setRows] = useState(null);
@@ -296,7 +275,6 @@ function History({ flash }) {
         <p>Every report the agent generated. Search by event name and download the PDF.</p>
       </div>
       <div className="searchbar" style={{ marginBottom: 16, maxWidth: 420 }}>
-        <span>🔎</span>
         <input placeholder="Search by event name…" value={q}
           onChange={(e) => { setQ(e.target.value); load(e.target.value); }} />
       </div>
