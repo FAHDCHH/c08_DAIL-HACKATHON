@@ -1,0 +1,72 @@
+{
+  "context_id": "schmitz_youth_digital",
+  "organization": {
+    "name": "Schmitz-Stiftungen",
+    "kind": "charitable foundation",
+    "role": "funder"
+  },
+  "program": {
+    "id": "YDS-2026",
+    "name": "Youth Digital Skills Program",
+    "area": "youth education / digital inclusion",
+    "partner": "Lernwerk gGmbH",
+    "period_model": "quarterly"
+  },
+  "audience": "foundation board and donors; drives tranche disbursement decisions",
+  "terminology": {
+    "attended": "Present at a session. Supported by an attendance record only.",
+    "completed": "Finished the full program AND passed the end-of-program assessment (ASSESS form). Attendance alone is NOT completion.",
+    "trained": "Ambiguous. Do not use in a claim. Resolve to 'attended' or 'completed' depending on the evidence."
+  },
+  "rules": [
+    {
+      "id": "R1",
+      "text": "Every numeric claim must state its unit, its period, and at least one evidence record. A number without all three is unsupported."
+    },
+    {
+      "id": "R2",
+      "text": "A report stays draft until the officer approves it. Nothing here approves itself."
+    },
+    {
+      "id": "R3",
+      "text": "Never infer an outcome from participation alone. Attendance does not imply completion, learning, or employment."
+    },
+    {
+      "id": "NOTE-A",
+      "text": "Report participation as 'attended'. Do not report 'completed' unless the end-of-program assessment (ASSESS) record is present for that person or cohort."
+    }
+  ],
+  "metrics": [
+    {
+      "key": "participants_attended",
+      "label": "Participants attended",
+      "unit": "people",
+      "period": "quarter",
+      "source_expected": "attendance_sheet"
+    },
+    {
+      "key": "participants_completed",
+      "label": "Participants completed",
+      "unit": "people",
+      "period": "quarter",
+      "source_expected": "assessment_record (ASSESS)"
+    },
+    {
+      "key": "sessions_held",
+      "label": "Sessions held",
+      "unit": "sessions",
+      "period": "quarter",
+      "source_expected": "attendance_sheet"
+    }
+  ],
+  "report_schema": {
+    "sections": ["Participation", "Outcomes", "Open questions"],
+    "required_claims": ["participants_attended", "sessions_held"]
+  },
+  "status_definitions": {
+    "supported": "Backed by at least one evidence record; consistent across sources; satisfies R1.",
+    "conflicting": "Two or more sources give different values for the same fact.",
+    "unsupported": "No evidence record backs it, or it violates a rule (e.g. completion without ASSESS).",
+    "uncertain": "Partial evidence; cannot be confirmed or denied yet."
+  }
+}

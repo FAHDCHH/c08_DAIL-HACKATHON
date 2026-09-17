@@ -1,0 +1,37 @@
+{
+  "scenario_id": "concrete_pour_blockb",
+  "context_id": "construction_concrete_pour",
+  "event": {
+    "program": "Foundation slab pour - Block B",
+    "period": "2026-02-14",
+    "title": "Block B foundation slab pour - Site Casablanca, 14 Feb 2026"
+  },
+  "reports": [
+    {
+      "role": "site_foreman",
+      "format": "site_update_freetext",
+      "text": "Block B slab poured today, all good. About 28 m3 went in, went fine, no problems. Crew did a solid job, we're on schedule."
+    },
+    {
+      "role": "quality_inspector",
+      "format": "qc_slump_form",
+      "text": "QC record, Block B, 14 Feb 2026. Concrete received: 26 m3 across 4 trucks from BetonPlus. Slump tested 2 of 4 trucks. Truck 1: 15 cm (OK, spec max 18). Truck 3: 22 cm (FAIL, exceeds spec 18). Truck 3 was poured anyway on site-lead instruction. Trucks 2 and 4 not tested."
+    },
+    {
+      "role": "logistics_coordinator",
+      "format": "delivery_log",
+      "text": "Delivery log 14 Feb: Block B, supplier BetonPlus, 4 concrete trucks received and signed for. Delivery complete."
+    },
+    {
+      "role": "finance",
+      "format": "finance_note",
+      "text": "Progress payment to BetonPlus for the Block B pour is pending the approved site report. Please confirm volume and conformity before sign-off."
+    }
+  ],
+  "simulated_followup": {
+    "label": "SIMULATED: site lead uploads disposition record",
+    "role": "site_lead",
+    "format": "disposition_record",
+    "text": "Disposition record, Block B, 14 Feb 2026. The out-of-spec Truck 3 load (slump 22 cm) was rejected on site and returned to BetonPlus; it was NOT placed in the Block B slab. The slab was cast from 3 conforming trucks, approx 21 m3."
+  }
+}

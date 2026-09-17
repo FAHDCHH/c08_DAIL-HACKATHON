@@ -1,0 +1,13 @@
+.env
+.env.*
+!.env.example
+__pycache__/
+*.pyc
+reports_out/*.pdf
+.venv/
+venv/
+*.log
+node_modules/
+frontend/node_modules/
+.next/
+frontend/.next/

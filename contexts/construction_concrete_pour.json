@@ -1,0 +1,74 @@
+{
+  "context_id": "construction_concrete_pour",
+  "organization": {
+    "name": "BinAiTech client - general contractor",
+    "kind": "construction contractor",
+    "role": "main contractor reporting on subcontracted work"
+  },
+  "program": {
+    "id": "SITE-CASA-BLOCKB",
+    "name": "Foundation slab pour - Block B",
+    "area": "structural concrete works",
+    "supplier": "BetonPlus",
+    "period_model": "per pour / per day"
+  },
+  "audience": "site manager and finance; drives progress payment to the supplier and continue/redo decisions on the slab",
+  "terminology": {
+    "delivered": "Concrete arrived on site. Supported by a delivery log only.",
+    "poured": "Concrete was placed. Supported by a site record. Does NOT imply it conformed to spec.",
+    "conforming": "Passed the required tests (e.g. slump within spec). Requires a test record. Delivery or pour alone is NOT conformity.",
+    "accepted": "Formally accepted for structural use AFTER conformity is confirmed.",
+    "went fine": "A subjective judgement, not evidence. Never report as fact."
+  },
+  "rules": [
+    {
+      "id": "R1",
+      "text": "Every numeric claim must state its unit, its date/period, and at least one evidence record. A number without all three is unsupported."
+    },
+    {
+      "id": "R2",
+      "text": "A report stays draft until the officer approves it. Nothing here approves itself."
+    },
+    {
+      "id": "R3",
+      "text": "Never infer conformity or acceptance from delivery or pour alone. A test result is required to claim the work conformed."
+    },
+    {
+      "id": "NOTE-A",
+      "text": "Any failed or out-of-spec test result MUST be surfaced in the report. Never omit a failed test, even if the work proceeded."
+    }
+  ],
+  "metrics": [
+    {
+      "key": "concrete_volume",
+      "label": "Concrete volume placed",
+      "unit": "m3",
+      "period": "per pour",
+      "source_expected": "delivery_log or batch tickets"
+    },
+    {
+      "key": "trucks_delivered",
+      "label": "Trucks delivered",
+      "unit": "trucks",
+      "period": "per pour",
+      "source_expected": "delivery_log"
+    },
+    {
+      "key": "slump_test",
+      "label": "Slump test result",
+      "unit": "cm",
+      "period": "per truck",
+      "source_expected": "qc_slump_form (spec max 18 cm)"
+    }
+  ],
+  "report_schema": {
+    "sections": ["Delivery", "Conformity", "Open questions"],
+    "required_claims": ["concrete_volume", "trucks_delivered", "slump_test"]
+  },
+  "status_definitions": {
+    "supported": "Backed by at least one evidence record; consistent across sources; satisfies R1.",
+    "conflicting": "Two or more sources give different values for the same fact.",
+    "unsupported": "No evidence record backs it, or it violates a rule (e.g. conformity claimed without a test).",
+    "uncertain": "Partial evidence; cannot be confirmed or denied yet."
+  }
+}
