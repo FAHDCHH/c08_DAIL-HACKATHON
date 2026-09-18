@@ -7,7 +7,14 @@ Turns mixed, conflicting field reports about one event into a **reviewable progr
 
 ---
 
-## Run it
+## Live demo
+
+- **Frontend:** https://c08-dail-hackathon.vercel.app — demo key: **`schmitz2026`**
+- **Backend API:** https://c08dail-hackathon-production.up.railway.app/docs
+
+---
+
+## Run it locally
 
 ```bash
 cp .env.example .env        # fill DEEPSEEK_API_KEY (or set AGENT_MODE=mock to run with no key)
