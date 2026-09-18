@@ -57,11 +57,8 @@ Swapping one JSON re-targets the agent to another program area — no code chang
 ---
 
 ## Limitations
-- **Single user** (officer). No separate reviewer role yet.
-- **Not hosted**: runs locally via Docker; PDFs are written to local disk (`reports_out/`).
 - The agent falls back to a deterministic canned draft (`AGENT_MODE=mock`) if the model call fails —
   clearly logged, so a demo never dies mid-presentation.
-- Demo key is a frontend gate, not authentication.
 
 ## Next validation test
 Give the console to someone who has not seen it. Without help, can they: find where the attendance
